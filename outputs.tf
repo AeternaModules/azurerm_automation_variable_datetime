@@ -1,3 +1,7 @@
+output "automation_variable_datetimes_id" {
+  description = "Map of id values across all automation_variable_datetimes, keyed the same as var.automation_variable_datetimes"
+  value       = { for k, v in azurerm_automation_variable_datetime.automation_variable_datetimes : k => v.id }
+}
 output "automation_variable_datetimes_automation_account_name" {
   description = "Map of automation_account_name values across all automation_variable_datetimes, keyed the same as var.automation_variable_datetimes"
   value       = { for k, v in azurerm_automation_variable_datetime.automation_variable_datetimes : k => v.automation_account_name }
